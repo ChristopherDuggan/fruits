@@ -37,7 +37,7 @@ app.post('/fruits', async (req, res) => {
 
   await Fruit.create(req.body);
 
-  res.redirect('/fruits/new');
+  res.redirect('/fruits');
 });
 
 app.listen(3000, () => {
