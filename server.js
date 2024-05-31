@@ -18,6 +18,11 @@ app.get('/', async (req, res) => {
   res.render('index.ejs');
 });
 
+app.get('/fruits', async (req, res) => {
+  const allFruits = await Fruit.find();
+  res.render('fruits/index.ejs', { fruits: allFruits });
+});
+
 app.get('/fruits/new', (req, res) => {
   res.render('fruits/new.ejs');
 });
