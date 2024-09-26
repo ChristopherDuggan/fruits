@@ -35,7 +35,12 @@ app.post("/fruits", async (req, res) => {
 
   await Fruit.create(req.body);
   
-  res.redirect("/fruits/new");
+  res.redirect("/fruits");
+});
+
+app.get("/fruits", async (req, res) => {
+  const allFruits = await Fruit.find();
+  res.render("fruits/index.ejs", { fruits: allFruits });
 });
 
 app.listen(3000, () => {
