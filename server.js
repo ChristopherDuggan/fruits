@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+const Fruit = require("./models/fruit.js");
+
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
